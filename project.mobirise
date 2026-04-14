@@ -1,0 +1,650 @@
+{
+  "settings": {
+    "name": "My Site",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "styling": {
+        "primaryColor": "#2b7a69",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffffff",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": "1.4",
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": true,
+        "isAnimatedOnScroll": true,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": [
+        "#ffa25b",
+        "#2b7a69",
+        "#164fd3",
+        "#ff7d19",
+        "#385493",
+        "#086784",
+        "#fe8d01"
+      ]
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.8.25",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "uniqCompNum": 89,
+    "versionPublish": "6.1.12",
+    "imageResize": true,
+    "chatbutton": {},
+    "favicon": false,
+    "mbrsiteDomain": "ktjot1jvkl",
+    "usedWebp": false,
+    "cssOptimize": false,
+    "lazyLoad": false,
+    "robotsSwitcher": false,
+    "sitemapSwitcher": false,
+    "sitemapSwitcherAuto": false,
+    "siteUrl": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "pwa-switcher": false,
+    "screenshot": "screenshot.png",
+    "publishChangesOnly": true
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Home",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "display": "flex",
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            "@media (min-width: 768px)": {
+              "align-items": "~\"@{verticalAlign}\"",
+              ".row": {
+                "justify-content": "~\"@{horizontalAlign}\""
+              },
+              ".content-wrap": {
+                "padding": "1rem 3rem"
+              }
+            },
+            "@media (max-width: 991px) and (min-width: 768px)": {
+              ".content-wrap": {
+                "min-width": "50%"
+              }
+            },
+            "@media (max-width: 767px)": {
+              "-webkit-align-items": "center",
+              "align-items": "~\"@{verticalAlign}\"",
+              ".mbr-row": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center"
+              },
+              ".content-wrap": {
+                "width": "100%"
+              }
+            },
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "center"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "header17",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header16\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"20\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\">Center</option>\n      <option value=\"flex-end\" selected>Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/screenshot202026-04-1320at2011.22.17e280afam-1150x808.png\" parallax selected>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\">\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>Assignment 2.0: 构图在线展示练习</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\">\n          Header Subtitle\n        </h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">主题是: 四种常见的构图方式</p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Learn More</a></div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgDqlgo5rM",
+          "_anchor": "header17-1m",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/e5afb9e7a7b0e69e84e59bbe20symmetrical20composition-750x375.png\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>对称构图Symmetrical Composition Napoleon Dynamite (2004)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">This scene uses symmetrical composition. The character is placed in the center of the frame, and the hallway on the left and right sides looks almost identical. This creates a balanced and organized visual effect. The symmetrical composition draws the viewer’s attention to the character and also emphasizes his lonely and awkward feeling in the school environment.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFLrRzvdk",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-1w"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/1-1000x584.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>对称构图Symmetrical Composition (Jurassic World)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In the film Jurassic World, this shot uses symmetrical composition. The character (played by Chris Pratt) is placed in the center, aligning with the vertical axis, which draws attention to his facial expression and highlights tension and focus.The repeated structures in the background strengthen the sense of symmetry and stability, while the slightly off-center hand breaks the symmetry, adding movement and tension. This composition emphasizes the balance and conflict between the human and the dinosaur.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFM8kLgZI",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-1x"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/2-1200x675.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\"><b>对称构图Symmetrical Composition(JOKER)</b><br>In the film Joker, this shot also uses symmetrical composition. The stairs and handrails create strong leading lines and near symmetry, guiding the viewer’s eyes toward the character (played by Joaquin Phoenix).Although the character is slightly off-center, his raised arms balance the frame visually. The symmetry of the background contrasts with his dynamic pose, emphasizing his transformation and chaotic emotions.<div><b><br></b></div></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFMawEQuY",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-1y"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/3-1200x750.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>对称构图Symmetrical Composition</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In the TV series Sherlock, this shot uses strong symmetrical composition. The character (played by Benedict Cumberbatch) stands exactly in the center, aligned with the vertical axis.The two windows on both sides create a clear mirror-like balance, enhancing symmetry and drawing attention to the character. The perspective lines also lead toward the center, making him the visual focus.This composition emphasizes order, intelligence, and control, reflecting the character’s logical and analytical mind.<br></p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFMaZMy5Q",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-1z"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/birds20eye20view202-1100x618.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-7\" mbr-if=\"showTitle\"><div><b><br></b></div><div><b>顶视构图Bird’s-eye / Overhead / Top-down(The Avenger)</b></div><br><div><i style>&nbsp;The Avengers, the story follows heroes uniting to stop Loki’s alien invasion, and the use of bird’s-eye (top-down) shots highlights the large-scale battlefield, emphasizes danger, and shows the overall chaos of the city.</i></div></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRxWp6yq",
+          "_anchor": "header12-21",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/6-1600x860.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>顶视构图Bird’s-eye / Overhead / Top-down(The Amazing Spider-Man)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">This image is from The Amazing Spider-Man, featuring Peter Parker.It uses a bird’s-eye (top-down) shot to show Spider-Man high above a ship while saving people, emphasizing height, danger, and the scale of the situation while clearly presenting the surrounding chaos and action below.<br></p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRynhlDi",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-22"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/8-720x405.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>顶视构图Bird’s-eye / Overhead / Top-down (Inception)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">This image is from Inception, directed by Christopher Nolan.It uses a bird’s-eye (top-down) shot to show characters lying in a dream-like space surrounded by scattered objects, emphasizing disorientation, psychological depth, and the blurred line between reality and dreams while visually organizing the scene from above.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRyUAcJM",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-23"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/9-474x266.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>顶视构图Bird’s-eye / Overhead / Top-down（The Avengers)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">This scene is from The Avengers. It uses a bird’s-eye view (overhead shot), where the camera looks down at the characters from above, making them appear smaller while clearly showing the surrounding environment and the aftermath of the battle.This type of composition enhances the sense of space and scale, helping the audience understand the setting and the characters’ positions. In addition, the characters looking upward increases tension and suggests that something important or dangerous is about to happen, adding more dramatic impact to the scene.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRDssTdi",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-24"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/10-768x512.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>引导线构图Leading Lines （Inception)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">The leading lines stretch into the distance, guiding her steps forward as if the path itself is pulling her toward an unknown destination.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRDXSFfD",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-25"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/11-1696x953.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>引导线构图Leading Lines（The Dark Knight）</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In The Dark Knight, the horizontal and vertical elements in the environment—such as ceiling lights, walls, and table edges—form subtle leading lines that guide the viewer’s eye directly toward the key piece of evidence in the character’s hand, reinforcing both the narrative focus and the tension of the scene.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFREqohNV",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-26"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/12-1600x1044.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>&nbsp;引导线构图Leading Lines（Rear Window）</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In Rear Window, the director combines the rule of thirds with strong spatial lines created by windows, furniture, and interior architecture, allowing the viewer’s gaze to move naturally across the frame while emphasizing the relationship and interaction between the characters.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRELm6VQ",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-27"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#f7f7f7"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#f7f7f7"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#000000\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/13-990x450.png\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>引导线构图Leading Lines（The Graduate）</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">In The Graduate, the use of foreground framing and diagonal lines—formed by the surrounding environment and figures—creates powerful leading lines that draw the viewer’s attention to the central character, enhancing both the visual focus and the underlying sense of humor and tension in the scene.</p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRFwwY3Q",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-28"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/14-755x425.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>低角度构图(Low Angle)</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n          Intro with an image above text. Click on the image to replace it.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRFQPJKK",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-29"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/15-1000x667.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>低角度构图Low Angle</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n          Intro with an image above text. Click on the image to replace it.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRGdnHyz",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-2a"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".mbr-section-title": {
+              "color": "#000000"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/16-1280x720.jpg\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\"><b>低角度构图Low Angle</b></h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n          Intro with an image above text. Click on the image to replace it.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgFRGB7JzM",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-2b"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            }
+          },
+          "_name": "header12",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header12\" group=\"Headers\" mbr-class=\"{\n  'mbr-fullscreen': fullScreen,\n  'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"imageWidth\" title=\"Image Width\" min=\"4\" max=\"12\" step=\"1\" value=\"8\" condition=\"showImage\">\n\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"checkbox\" title=\"Image\" name=\"showImage\" checked>\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n  <div class=\"text-center\" mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row mb-4 justify-content-center\" mbr-if=\"showImage\">\n      <div class=\"col-12 col-md-{{imageWidth}}\">\n        <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/17-694x390.png\" alt=\"Mobirise Website Builder\">\n      </div>\n    </div>\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-12 content-head\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mb-4\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n          <b>From ordinary to extraordinary</b>\n        </h1>\n        <p class=\"mbr-text mbr-fonts-style mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n          Intro with an image above text. Click on the image to replace it.\n        </p>\n        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn mt-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n          <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Download now</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "vgJaBACimf",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header12-2g"
+        }
+      ]
+    }
+  }
+}
